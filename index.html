@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students list</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <h1 class="header">Список студентов</h1>
+
+      <form class="form_add row gy-2 gx-3 align-items-center">
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Фамилия</label>
+          <input type="text" class="form-control students-item" id="surname" placeholder="Иванов">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Имя</label>
+          <input type="text" class="form-control students-item" id="name" placeholder="Иван">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Отчество</label>
+          <input type="text" class="form-control students-item" id="patronymic" placeholder="Иванович">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Дата рождения</label>
+          <input type="date" class="form-control students-item" id="birthday">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Год поступления</label>
+          <input type="text" class="form-control  students-item" id="educationStart" placeholder="2020">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label">Факультет</label>
+          <select class="form-select" id="faculty">
+            <option value="0">Экономика</option>
+            <option value="1">Филфак</option>
+            <option value="2">Право</option>
+            <option value="3">Геодезия</option>
+          </select>
+        </div>
+        <button class="btn btn-success button-add">Добавить студента</button>
+      </form>
+      <hr class="hr">
+    </div>
+  </section>
+
+  <div class="container">
+    <form class="row gy-2 gx-3 align-items-center search">
+      <div class="col-auto col-md-6">
+        <input type="text" class="filter_input form-control" data-filter="fio" placeholder="Введите ФИО">
+      </div>
+      <div class="col-auto col-md-6">
+        <input type="text" class="filter_input form-control" data-filter="faculty" placeholder="Факультет">
+      </div>
+      <div class="col-auto col-md-6">
+        <input type="text" class="filter_input form-control" data-filter="admission" placeholder="Год начала обучения">
+      </div>
+      <label class="col-auto col-md-6">
+        <input type="text" class="filter_input form-control" data-filter="graduation" placeholder="Год окончания обучения" >
+      </label>
+    </form>
+  </div>
+
+  <section>
+    <div class="container">
+      <h2 class="header-paragraph">Студенты</h2>
+      <div class="blok">
+        <table class="table table-bordered border-success table-striped" id="sortable">
+          <thead>
+            <tr>
+              <th class="btn_order" data-sort="fio">ФИО</th>
+              <th class="btn_order" data-sort="faculty">Факультет</th>
+              <th class="btn_order" data-sort="birthday">Дата рождения и возраст</th>
+              <th class="btn_order" data-sort="educationStart">Годы обучения и номер курса </th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
